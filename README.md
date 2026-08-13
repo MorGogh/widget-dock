@@ -1,17 +1,16 @@
 # widget-dock · DSH 小组件面板
 
-> DeepSeek Harness (dsh) 客户端插件：在对话页面的两侧空白处挂载可拖动、可排序的小组件面板。
+> DeepSeek Harness (dsh) 客户端插件：在对话页右侧提供安静的工作状态栏与可定制工作台。
 
-Widget dock plugin for DeepSeek Harness — add mini-apps (API balance, token usage, session stats, quick commands, goal progress, cost estimate) to the blank areas beside the conversation.
+Widget dock plugin for DeepSeek Harness — keep API balance, token usage, session stats, goal progress, and cost estimates in one focused workbench.
 
 ## ✨ 功能 / Features
 
-- **➕ 输入框左下角入口**：点击弹出"添加小组件"面板（`conversation.input.left`）
-- **拖出放置**：从面板把组件拖到左/右侧空白处落位（空列显示虚线占位框）；点击组件则添加到右侧
-- **两侧吸附**：组件吸附在对话内容外侧空白，**不遮挡对话**（JS 实测容器位置 + ResizeObserver 自适应，空间不足自动隐藏）
-- **拖动排序**：按住组件头部 ⠿ 在同列内拖放排序
-- **组件编辑**：余额卡可改 API Key，成本卡可改单价
-- **持久化**：位置/配置存 localStorage，重启保留
+- **工作状态栏**：默认显示上下文、目标、回合三项信息，始终不抢占对话注意力
+- **工作台**：点击状态栏或输入框的 `+` 展开；信息统一在右侧固定区域呈现
+- **按需定制**：可固定余额、Token、会话统计、目标和成本估算；不需要拖动、缩放或布局管理
+- **组件编辑**：余额可改 API Key，成本可改单价
+- **持久化**：所选项目和配置存入 localStorage，重启保留
 
 ## 🧩 内置小组件 / Widgets
 
@@ -20,7 +19,6 @@ Widget dock plugin for DeepSeek Harness — add mini-apps (API balance, token us
 | 💰 | API 余额 | DeepSeek `user/balance` 接口（含充值跳转、KEY 编辑）|
 | 📊 | Token 用量 | `tokenUsage` 投影（输入/输出/缓存）|
 | 📈 | 会话统计 | `sessionStats` 投影（回合/步骤/耗时）|
-| ⚡ | 快捷命令 | `/compact` `/goal` `/model` 等一键执行 |
 | 🎯 | 目标进度 | `goal` 投影 |
 | 🧾 | 成本估算 | token × 单价（单价可编辑）|
 
@@ -40,7 +38,7 @@ ln -sfn "$(pwd)" ~/.dsh/profiles/web/node_modules/widget-dock
 dsh web
 ```
 
-重启后：输入框工具行左下角出现 **➕** → 打开面板 → 拖出或点击添加组件。
+重启后：右上角出现 **工作状态**。点击“打开工作台”或输入框工具行左下角的 **+**，即可定制要显示的信息。
 
 ## 🔧 配置 / Configuration
 
