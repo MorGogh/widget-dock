@@ -39,7 +39,7 @@
 
 1. ~~发布安全：pre-push hook / prepublishOnly 自动检测 `sk-` 密钥拦截泄露~~ ✅ 已完成（scripts/check-secret.mjs + .githooks/pre-push + package.json prepack/prepublishOnly 三重拦截，已验证：有 key 拦截、无 key 放行）
 2. ~~卡片折叠：点击标题收起/展开内容，只留标题行~~ ✅ 已完成（config.collapsed 持久化，▾/▸ 箭头，拖动不误触折叠——didDragRef 标记区分拖与点）
-3. **会话时光机正规化**：注册全局 slot 合法拿 `useSessions`，去掉 typeof hack。
+3. ~~会话时光机正规化：注册全局 slot 合法拿 `useSessions`，去掉 typeof hack~~ ✅ 已完成（useSessions 本是 GlobalStandardProps，每个 session 作用域 slot 都注入；改为 WidgetDock 顶层无条件调用 + 选择器只取切片 {ids,titles,cwds,current} + eq 内容比较防无关重渲染；消费卡片改为适配切片，移除 byId 依赖）
 4. ~~清理死代码：.wd-status 状态栏 CSS 残留~~ ✅ 已完成（8 行 CSS 已删）
 5. 数据节流（token/余额卡片刷新间隔）、布局快照（JSON 导出/导入）、拖拽 lift 动画、空状态引导文案。
 
