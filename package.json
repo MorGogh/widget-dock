@@ -32,6 +32,11 @@
     "README.md",
     "LICENSE"
   ],
+  "scripts": {
+    "check-secret": "node scripts/check-secret.mjs",
+    "prepack": "node scripts/check-secret.mjs",
+    "prepublishOnly": "node scripts/check-secret.mjs"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",

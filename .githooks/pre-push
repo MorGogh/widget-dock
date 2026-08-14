@@ -1,0 +1,12 @@
+#!/bin/sh
+# pre-push — 推送前检查密钥，防止 sk- 密钥进入远程仓库。
+# 需要 node 环境。检测到密钥时终止推送。
+set -e
+
+if command -v node >/dev/null 2>&1 && [ -f scripts/check-secret.mjs ]; then
+  node scripts/check-secret.mjs || {
+    echo "pre-push: 推送已拦截（见上方 check-secret 输出）。"
+    exit 1
+  }
+fi
+exit 0
