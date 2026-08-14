@@ -1,0 +1,6 @@
+# widget-dock funding / 赞助支持
+# 在仓库页显示 "Sponsor" 按钮，点击后可选择微信/支付宝扫码打赏。
+github: [MorGogh]
+custom:
+  - "https://raw.githubusercontent.com/MorGogh/widget-dock/main/assets/sponsor/wechat-qr.jpg"
+  - "https://raw.githubusercontent.com/MorGogh/widget-dock/main/assets/sponsor/alipay-qr.jpg"

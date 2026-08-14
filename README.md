@@ -49,3 +49,11 @@ dsh web
 ## 📄 协议 / License
 
 MIT
+
+## 💝 赞助支持 / Sponsor
+
+如果 widget-dock 对你有帮助，欢迎扫码打赏支持开发维护，感谢每一位支持者！
+
+| 微信赞赏 | 支付宝赞赏 |
+|---|---|
+| ![WeChat QR](assets/sponsor/wechat-qr.jpg) | ![Alipay QR](assets/sponsor/alipay-qr.jpg) |
