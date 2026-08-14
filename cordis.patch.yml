@@ -1,0 +1,4 @@
+# widget-dock bundle patch: registers the workbench plugin.
+- insert:
+    - id: widget-dock
+      name: widget-dock
