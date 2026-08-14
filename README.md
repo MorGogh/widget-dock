@@ -67,7 +67,15 @@ ln -sfn "$(pwd)" ~/.dsh/profiles/web/node_modules/widget-dock
 dsh web
 ```
 
-重启后：对话两侧出现工作台。点击右侧工作台右上角 `＋` 打开侧栏添加面板；按住卡片头部即可拖动排序/换侧。
+重启后：对话两侧出现工作台。点击右侧工作台右上角 `＋` 打开侧栏添加面板；按住卡片头部即可拖动排序/换侧，点击卡片标题可收起/展开内容。
+
+### 开发者：发布安全闸门
+
+仓库内置了防密钥泄露三重拦截（`scripts/check-secret.mjs` + `.githooks/pre-push` + `prepack`/`prepublishOnly`）：只要 `lib/client.js` 里的 `EMBEDDED_KEY` 非空，`git push` / `npm publish` 都会被拒绝。clone 后启用一次：
+
+```bash
+git config core.hooksPath .githooks
+```
 
 > 安装遇到问题？可在 [Issues](https://github.com/MorGogh/widget-dock/issues) 提问，或查看下方 FAQ。
 
