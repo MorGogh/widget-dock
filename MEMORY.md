@@ -42,6 +42,7 @@
 3. ~~会话时光机正规化：注册全局 slot 合法拿 `useSessions`，去掉 typeof hack~~ ✅ 已完成（useSessions 本是 GlobalStandardProps，每个 session 作用域 slot 都注入；改为 WidgetDock 顶层无条件调用 + 选择器只取切片 {ids,titles,cwds,current} + eq 内容比较防无关重渲染；消费卡片改为适配切片，移除 byId 依赖）
 4. ~~清理死代码：.wd-status 状态栏 CSS 残留~~ ✅ 已完成（8 行 CSS 已删）
 5. 数据节流（token/余额卡片刷新间隔）、布局快照（JSON 导出/导入）、拖拽 lift 动画、空状态引导文案。
+6. ✅ 图片转述卡片（imagerelay，v1.0.2 已实现）：选本地图片 → base64 → OpenAI 兼容 /chat/completions（image_url 格式，与 DSH pi-ai 同款 wire）→ 视觉模型出文字描述 → inputActions.setDraft 注入输入框 → DeepSeek 以纯文本处理。配置：端点/模型/KEY（localStorage `widget-dock:vision-key`，默认 qwen-vl-plus）。**已验证**：useInput+inputActions 由 ui-conversation 的 `sessions.provide({hooks:["input"],props:["inputActions"]})` 注入每个 session 槽，必然存在。
 
 ## 发布状态
 
