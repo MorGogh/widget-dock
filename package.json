@@ -1,6 +1,6 @@
 {
   "name": "widget-dock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DSH plugin: a draggable workbench of mini-cards (API balance, token usage, session stats, goal, cost estimate) beside the conversation",
   "type": "module",
   "main": "lib/index.js",
